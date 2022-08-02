@@ -7,14 +7,24 @@ import { Link } from "react-router-dom";
 
 // images
 import heroImage from "../images/heroImg.png";
+import straw from "../images/strraw.png";
 
 import { SubMenu } from "../common/SubMenu";
+import ItemMenu from "./ItemMenu";
 
 const Main = () => {
   return (
     <main className="mt-6 flex flex-col px-4 sm:p-0">
       <HeroSection />
       <SubMenu name={"Menu category"} icon={<FiChevronRight />} />
+      <div className="mt-2 flex gap-3 no-scrollbar container m-auto  items-center overflow-x-auto overflow-y-hidden">
+        <ItemMenu  imageSrc={straw} name={"burger"} />
+        <ItemMenu  imageSrc={straw} name={"burger"} />
+        <ItemMenu  imageSrc={straw} name={"burger"} />
+        <ItemMenu  imageSrc={straw} name={"burger"} />
+        <ItemMenu  imageSrc={straw} name={"burger"} />
+        <ItemMenu  imageSrc={straw} name={"burger"} />
+      </div>
     </main>
   );
 };
