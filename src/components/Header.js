@@ -12,7 +12,7 @@ import { MdOutlineSearch } from "react-icons/md";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { RiMenu4Fill } from "react-icons/ri";
 
-export const Header = () => {
+const Header = () => {
   const [isShowName, setIsShowName] = useState(false);
   return (
     <header className="sticky shadow-sm shadow-orange-300 ">
@@ -63,3 +63,5 @@ export const Header = () => {
     </header>
   );
 };
+
+export default Header;
