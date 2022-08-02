@@ -11,20 +11,29 @@ import straw from "../images/strraw.png";
 
 import { SubMenu } from "../common/SubMenu";
 import ItemMenu from "./ItemMenu";
+import { Product } from "./Product";
 
 const Main = () => {
   return (
-    <main className="mt-6 flex flex-col px-4 sm:p-0">
+    <main className="mt-6 w-full h-full flex flex-col px-4 sm:p-0">
       <HeroSection />
       <SubMenu name={"Menu category"} icon={<FiChevronRight />} />
       <div className="mt-2 flex gap-3 no-scrollbar container m-auto  items-center overflow-x-auto overflow-y-hidden">
-        <ItemMenu  imageSrc={straw} name={"burger"} />
-        <ItemMenu  imageSrc={straw} name={"burger"} />
-        <ItemMenu  imageSrc={straw} name={"burger"} />
-        <ItemMenu  imageSrc={straw} name={"burger"} />
-        <ItemMenu  imageSrc={straw} name={"burger"} />
-        <ItemMenu  imageSrc={straw} name={"burger"} />
+        <ItemMenu imageSrc={straw} name={"burger"} />
+        <ItemMenu imageSrc={straw} name={"burger"} />
+        <ItemMenu imageSrc={straw} name={"burger"} />
+        <ItemMenu imageSrc={straw} name={"burger"} />
+        <ItemMenu imageSrc={straw} name={"burger"} />
+        <ItemMenu imageSrc={straw} name={"burger"} />
       </div>
+
+      <section className="mt-16 container   m-auto gap-x-3 gap-y-16 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+      </section>
     </main>
   );
 };

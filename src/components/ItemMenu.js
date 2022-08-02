@@ -6,7 +6,7 @@ function ItemMenu({ imageSrc, name }) {
   return (
     <div
       onClick={() => setActive(!active)}
-      className={` bg-zinc-900 shadow-black  w-24 h-28 min-w-[96px] cursor-pointer  rounded-lg `}
+      className={` bg-zinc-900 shadow-black  w-24 h-28 min-w-[96px] cursor-pointer  rounded-lg`}
     >
       <div
         className={`${
