@@ -28,9 +28,9 @@ function FavoriteItems() {
         </div>
       )}
       {favoriteProducts.length ? (
-        <h2 className="text-3xl my-6 ">Your Favorite and Delicious Foods</h2>
+        <h2 className="text-3xl my-12">Your Favorite and Delicious Foods</h2>
       ) : (
-        <h2 className="text-3xl my-6 ">Your Favorite Food List Is Empty</h2>
+        <h2 className="text-3xl my-12">Your Favorite Food List Is Empty</h2>
       )}
       <div className="gap-x-3 gap-y-16 mt-10 grid grid-cols-2 w-full sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
         {favoriteProducts &&
