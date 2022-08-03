@@ -15,6 +15,8 @@ import { NotFound } from "./components/NotFound";
 import Cart from "./components/Cart";
 import FavoriteItems from "./components/FavoriteItems";
 import Form from "./components/Form";
+import Wallet from "./components/Wallet";
+import Setting from "./components/Setting";
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/favorite" element={<FavoriteItems />} />
         <Route path="/contactUs" element={<Form />} />
+        <Route path="/wallet" element={<Wallet />} />
+        <Route path="/setting" element={<Setting />} />
       </Routes>
       <ToastContainer />
       <BottomMenu />
