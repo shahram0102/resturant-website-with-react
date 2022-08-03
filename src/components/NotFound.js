@@ -1,6 +1,8 @@
 import React from "react";
 
+// components
 import notFound from "../images/not-found.png";
+// react router dom
 import { Link } from "react-router-dom";
 
 export const NotFound = () => {

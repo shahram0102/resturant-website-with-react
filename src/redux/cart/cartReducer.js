@@ -21,7 +21,7 @@ const cartReducer = (state = initialState, action) => {
       const totalPrice = updatedCart.reduce((acc, cur) => {
         return acc + cur.quantity * cur.price;
       }, 0);
-      console.log(state.selectedItems);
+ 
       return {
         ...state,
         selectedItems: updatedCart,

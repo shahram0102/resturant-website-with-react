@@ -3,6 +3,7 @@ import React from "react";
 import { FiChevronRight } from "react-icons/fi";
 import { BiTrashAlt } from "react-icons/bi";
 
+// redux
 import { useDispatch, useSelector } from "react-redux";
 import {
   clear,
@@ -11,6 +12,7 @@ import {
   removeFromCart,
 } from "../redux/cart/cartAction";
 
+// image
 import emptyCart from "../images/Empty-cart-panel.png";
 
 // components

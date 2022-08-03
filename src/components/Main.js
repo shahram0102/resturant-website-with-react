@@ -3,6 +3,7 @@ import React from "react";
 // icons
 import { FiChevronRight } from "react-icons/fi";
 
+// react router dom
 import { Link } from "react-router-dom";
 
 // images
@@ -14,6 +15,7 @@ import hot from "../images/hot-dog-category.jpg";
 import salad from "../images/salad-category.jpg";
 import drink from "../images/drink.png";
 
+// components
 import { SubMenu } from "../common/SubMenu";
 import ItemMenu from "./ItemMenu";
 import { Products } from "./Products";
@@ -49,13 +51,6 @@ const Main = () => {
         </Link>
       </div>
       <Products />
-      {/* <section className="mt-16 container   m-auto gap-x-3 gap-y-16 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-      </section> */}
     </main>
   );
 };

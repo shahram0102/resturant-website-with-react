@@ -1,10 +1,15 @@
 import React, { useEffect } from "react";
-import { Product } from "./Product";
-
+// redux
 import { useSelector, useDispatch } from "react-redux/es/exports";
 import { fetchProducts } from "../redux/products/productsAction";
+
+// components
 import { Loader } from "../common/Loader";
+import { Product } from "./Product";
+
+// react router dom
 import { useLocation, useNavigate } from "react-router-dom";
+// react icons
 import { BsChevronLeft } from "react-icons/bs";
 
 export const Products = () => {

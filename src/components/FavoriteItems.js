@@ -1,8 +1,15 @@
 import React, { useEffect } from "react";
+// icons
 import { BsChevronLeft } from "react-icons/bs";
-import { useDispatch, useSelector } from "react-redux";
+
+// react router dom
 import { useLocation, useNavigate } from "react-router-dom";
+
+// redux
+import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../redux/products/productsAction";
+
+// components
 import { Product } from "./Product";
 
 function FavoriteItems() {

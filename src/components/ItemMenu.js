@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+
+// icons
 import { BiChevronRight } from "react-icons/bi";
 
 function ItemMenu({ imageSrc, name }) {

@@ -1,13 +1,19 @@
 import React, { useEffect } from "react";
 
+// icons
+import { BsChevronLeft } from "react-icons/bs";
+
+// react router dom
 import { useNavigate, useParams } from "react-router-dom";
+
+// redux
 import { useSelector } from "react-redux";
-import { Product } from "./Product";
-import { Loader } from "../common/Loader";
 import { fetchProducts } from "../redux/products/productsAction";
 import { useDispatch } from "react-redux";
 
-import { BsChevronLeft } from "react-icons/bs";
+// components
+import { Product } from "./Product";
+import { Loader } from "../common/Loader";
 
 const FilterProducts = () => {
   const dispatch = useDispatch();
@@ -17,7 +23,6 @@ const FilterProducts = () => {
   );
   const navigate = useNavigate();
   const filterProducts = products.filter((p) => p.category === category);
-  console.log(filterProducts);
 
   useEffect(() => {
     dispatch(fetchProducts());
