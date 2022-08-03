@@ -22,7 +22,7 @@ import { Products } from "./Products";
 const Main = () => {
 
   return (
-    <main className="mt-6 w-full h-full flex flex-col px-4 sm:p-0">
+    <main className="mt-6 w-full h-full mb-24 flex flex-col px-4 sm:p-0">
       <HeroSection />
 
 

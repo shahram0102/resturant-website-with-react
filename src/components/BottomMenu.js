@@ -20,7 +20,7 @@ const menusItems = [
 export const BottomMenu = () => {
   return (
     <nav className="fixed w-full bottom-0 z-10  right-0 left-0">
-      <ul className="px-3 items-center sm:w-[454px] m-auto bg-zinc-900 flex justify-between h-16 rounded-tl-full rounded-br-full gap-2 py-1">
+      <ul className="px-3 items-center sm:w-[454px] m-auto bg-[rgba(0,0,0,.2)] flex justify-between h-16 rounded-tl-full rounded-br-full gap-2 py-1">
         {menusItems.map((item) => {
           return (
             <li

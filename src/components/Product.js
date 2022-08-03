@@ -1,21 +1,30 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
+
 // icons
 import { BsFillHeartFill } from "react-icons/bs";
 import { AiFillStar } from "react-icons/ai";
 import { AiFillPlusCircle } from "react-icons/ai";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../redux/cart/cartAction";
 
-
+const checkInCart = (cart, product) => {
+  return cart.find((item) => item.id === product.id);
+};
 
 export const Product = ({ productData }) => {
-  const {  name, price, image, rate } = productData;
+  const { name, price, image, rate } = productData;
+  const cartState = useSelector((state) => state.cartState);
+  console.log(cartState);
+  const dispatch = useDispatch();
 
   return (
     <div className="bg-zinc-900  py-2 px-2 rounded-2xl flex flex-col items-center">
       <div className="w-full relative pb-16">
         <img
           src={image}
-          className="w-40 rounded-full h-32 absolute -top-16 left-0" 
+          className="w-40 rounded-full h-32 absolute -top-16 left-0"
           alt={name}
         />
         <span className="absolute bottom-0 right-3">
@@ -33,9 +42,16 @@ export const Product = ({ productData }) => {
           <span className="text-orange-300">$</span>
           <span className="text-lg">{price}</span>
         </div>
-        <span className="text-3xl cursor-pointer">
-          <AiFillPlusCircle />
-        </span>
+        {checkInCart(cartState.selectedItems, productData) ? (
+          <Link to="/cart">Go to soppingCard</Link>
+        ) : (
+          <button
+            onClick={() => dispatch(addToCart(productData))}
+            className="text-3xl cursor-pointer"
+          >
+            <AiFillPlusCircle />
+          </button>
+        )}
       </div>
     </div>
   );
