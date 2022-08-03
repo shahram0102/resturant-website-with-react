@@ -25,10 +25,8 @@ export const fetchProducts = () => {
     dispatch(fetchProductsRequest());
 
     axios
-      .get("http://localhost:3000/products")
+      .get("http://localhost:3001/products")
       .then((res) => {
-
-        console.log(res.data);
         dispatch(fetchProductsSuccess(res.data));
       })
       .catch((error) => dispatch(fetchProductsFailure(error.message)));

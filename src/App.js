@@ -1,23 +1,27 @@
 import React from "react";
 import { BottomMenu } from "./components/BottomMenu";
 
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate, } from "react-router-dom";
 
 // components
-import Header from "./components/Header";
 import Main from "./components/Main";
 import FilterProducts from "./components/FilterProducts";
+import Layout from "./layout/Layout";
+import { Products } from "./components/Products";
+import { NotFound } from "./components/NotFound";
 
 function App() {
   return (
-    <div>
-      <Header />
-      <Main />
+    <Layout>
       <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/products" element={<Products />} />
         <Route path="/products/:category" element={<FilterProducts />} />
+        <Route path="/not-found" element={<NotFound />} />
+        <Route path="/*" element={<Navigate to="/not-found" />} />
       </Routes>
       <BottomMenu />
-    </div>
+    </Layout>
   );
 }
 

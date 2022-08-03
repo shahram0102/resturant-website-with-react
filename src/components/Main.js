@@ -7,41 +7,45 @@ import { Link } from "react-router-dom";
 
 // images
 import heroImage from "../images/heroImg.png";
-import straw from "../images/strraw.png";
+import burger from "../images/burger-category.png";
+import pizza from "../images/pizza-vegetable.png";
+import french from "../images/french-fries.png";
+import hot from "../images/hot-dog-category.jpg";
+import salad from "../images/salad-category.jpg";
+import drink from "../images/drink.png";
 
 import { SubMenu } from "../common/SubMenu";
 import ItemMenu from "./ItemMenu";
-import { Product } from "./Product";
 import { Products } from "./Products";
 
-import { useSelector } from "react-redux";
 
 const Main = () => {
-  const { products } = useSelector((state) => state.productsState);
-  console.log(products);
+
   return (
     <main className="mt-6 w-full h-full flex flex-col px-4 sm:p-0">
       <HeroSection />
 
-      <SubMenu name={"Menu category"} icon={<FiChevronRight />} />
+
+        <SubMenu name={"Menu category"} icon={<FiChevronRight />} />
+
       <div className="mt-2 flex gap-3 no-scrollbar container m-auto  items-center overflow-x-auto overflow-y-hidden">
         <Link to="/products/pizza">
-          <ItemMenu imageSrc={straw} name={"burger"} />
+          <ItemMenu imageSrc={pizza} name={"pizza"} />
         </Link>
         <Link to="/products/salad">
-          <ItemMenu imageSrc={straw} name={"burger"} />
+          <ItemMenu imageSrc={salad} name={"salad"} />
         </Link>
         <Link to="/products/french">
-          <ItemMenu imageSrc={straw} name={"burger"} />
+          <ItemMenu imageSrc={french} name={"french fries"} />
         </Link>
         <Link to="/products/drink">
-          <ItemMenu imageSrc={straw} name={"burger"} />
+          <ItemMenu imageSrc={drink} name={"drink"} />
         </Link>
         <Link to="/products/burger">
-          <ItemMenu imageSrc={straw} name={"burger"} />
+          <ItemMenu imageSrc={burger} name={"burger"} />
         </Link>
         <Link to="/products/hotdog">
-          <ItemMenu imageSrc={straw} name={"burger"} />
+          <ItemMenu imageSrc={hot} name={"hot dog"} />
         </Link>
       </div>
       <Products />
@@ -77,7 +81,7 @@ const HeroSection = () => {
         </Link>
       </div>
 
-      <img src={heroImage} className="h-full w-full" />
+      <img src={heroImage} className="h-full w-full" alt="hero" />
     </section>
   );
 };
