@@ -10,6 +10,7 @@ import Layout from "./layout/Layout";
 import { Products } from "./components/Products";
 import { NotFound } from "./components/NotFound";
 import Cart from "./components/Cart";
+import FavoriteItems from "./components/FavoriteItems";
 
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
         <Route path="/products/:category" element={<FilterProducts />} />
         <Route path="/not-found" element={<NotFound />} />
         <Route path="/*" element={<Navigate to="/not-found" />} />
-        <Route path="/cart" element={<Cart/>} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/favorite" element={<FavoriteItems />} />
       </Routes>
       <BottomMenu />
     </Layout>

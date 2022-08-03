@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { Link } from "react-router-dom";
 
@@ -8,16 +8,17 @@ import { AiFillStar } from "react-icons/ai";
 import { AiFillPlusCircle } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../redux/cart/cartAction";
+import { changeFavoriteStatus } from "../redux/products/productsAction";
 
 const checkInCart = (cart, product) => {
   return cart.find((item) => item.id === product.id);
 };
 
 export const Product = ({ productData }) => {
-  const { name, price, image, rate } = productData;
+  const { name, price, image, rate, favorite } = productData;
   const cartState = useSelector((state) => state.cartState);
-  console.log(cartState);
   const dispatch = useDispatch();
+
 
   return (
     <div className="bg-zinc-900  py-2 px-2 rounded-2xl flex flex-col items-center">
@@ -27,8 +28,13 @@ export const Product = ({ productData }) => {
           className="w-40 rounded-full h-32 absolute -top-16 left-0"
           alt={name}
         />
-        <span className="absolute bottom-0 right-3">
-          <BsFillHeartFill className="text-red-200" />
+        <span
+          onClick={() => dispatch(changeFavoriteStatus(productData))}
+          className="absolute bottom-0 right-3 cursor-pointer"
+        >
+          <BsFillHeartFill
+            className={`${favorite ? "text-red-700" : "text-red-200"}`}
+          />
         </span>
       </div>
       <div className="w-full flex flex-col gap-2">

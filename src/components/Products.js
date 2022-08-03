@@ -18,6 +18,8 @@ export const Products = () => {
     dispatch(fetchProducts());
   }, []);
 
+
+
   return (
     <section className="mt-28 container relative  m-auto gap-x-3 gap-y-16 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
       {pathname !== "/" && (
@@ -38,7 +40,12 @@ export const Products = () => {
       ) : (
         products &&
         products.map((product) => {
-          return <Product key={product.id} productData={product} />;
+          return (
+            <Product
+              key={product.id}
+              productData={product}
+            />
+          );
         })
       )}
     </section>

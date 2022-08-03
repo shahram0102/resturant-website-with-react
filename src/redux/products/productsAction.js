@@ -32,3 +32,18 @@ export const fetchProducts = () => {
       .catch((error) => dispatch(fetchProductsFailure(error.message)));
   };
 };
+
+export const changeFavoriteStatus = (productData) => {
+  return (dispatch) => {
+    axios
+      .put(`http://localhost:3001/products/${productData.id}`, {
+        ...productData,
+        favorite: !productData.favorite,
+      })
+      .then((res) => {
+        axios.get("http://localhost:3001/products").then((res) => {
+          dispatch(fetchProductsSuccess(res.data));
+        });
+      });
+  };
+};
