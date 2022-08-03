@@ -12,28 +12,46 @@ import straw from "../images/strraw.png";
 import { SubMenu } from "../common/SubMenu";
 import ItemMenu from "./ItemMenu";
 import { Product } from "./Product";
+import { Products } from "./Products";
+
+import { useSelector } from "react-redux";
 
 const Main = () => {
+  const { products } = useSelector((state) => state.productsState);
+  console.log(products);
   return (
     <main className="mt-6 w-full h-full flex flex-col px-4 sm:p-0">
       <HeroSection />
+
       <SubMenu name={"Menu category"} icon={<FiChevronRight />} />
       <div className="mt-2 flex gap-3 no-scrollbar container m-auto  items-center overflow-x-auto overflow-y-hidden">
-        <ItemMenu imageSrc={straw} name={"burger"} />
-        <ItemMenu imageSrc={straw} name={"burger"} />
-        <ItemMenu imageSrc={straw} name={"burger"} />
-        <ItemMenu imageSrc={straw} name={"burger"} />
-        <ItemMenu imageSrc={straw} name={"burger"} />
-        <ItemMenu imageSrc={straw} name={"burger"} />
+        <Link to="/products/pizza">
+          <ItemMenu imageSrc={straw} name={"burger"} />
+        </Link>
+        <Link to="/products/salad">
+          <ItemMenu imageSrc={straw} name={"burger"} />
+        </Link>
+        <Link to="/products/french">
+          <ItemMenu imageSrc={straw} name={"burger"} />
+        </Link>
+        <Link to="/products/drink">
+          <ItemMenu imageSrc={straw} name={"burger"} />
+        </Link>
+        <Link to="/products/burger">
+          <ItemMenu imageSrc={straw} name={"burger"} />
+        </Link>
+        <Link to="/products/hotdog">
+          <ItemMenu imageSrc={straw} name={"burger"} />
+        </Link>
       </div>
-
-      <section className="mt-16 container   m-auto gap-x-3 gap-y-16 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+      <Products />
+      {/* <section className="mt-16 container   m-auto gap-x-3 gap-y-16 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
         <Product />
         <Product />
         <Product />
         <Product />
         <Product />
-      </section>
+      </section> */}
     </main>
   );
 };
