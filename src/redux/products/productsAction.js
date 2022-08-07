@@ -1,49 +1,9 @@
-import axios from "axios";
+import { products } from "../../db/data";
 
-const fetchProductsRequest = () => {
-  return {
-    type: "FETCH_PRODUCTS_REQUEST",
-  };
-};
-
-const fetchProductsSuccess = (products) => {
+export const fetchProductsSuccess = () => {
   return {
     type: "FETCH_PRODUCTS_SUCCESS",
     payload: products,
   };
 };
 
-const fetchProductsFailure = (error) => {
-  return {
-    type: "FETCH_PRODUCTS_FAILURE",
-    payload: error,
-  };
-};
-
-export const fetchProducts = () => {
-  return (dispatch) => {
-    dispatch(fetchProductsRequest());
-
-    axios
-      .get("http://localhost:3001/products")
-      .then((res) => {
-        dispatch(fetchProductsSuccess(res.data));
-      })
-      .catch((error) => dispatch(fetchProductsFailure(error.message)));
-  };
-};
-
-export const changeFavoriteStatus = (productData) => {
-  return (dispatch) => {
-    axios
-      .put(`http://localhost:3001/products/${productData.id}`, {
-        ...productData,
-        favorite: !productData.favorite,
-      })
-      .then((res) => {
-        axios.get("http://localhost:3001/products").then((res) => {
-          dispatch(fetchProductsSuccess(res.data));
-        });
-      });
-  };
-};

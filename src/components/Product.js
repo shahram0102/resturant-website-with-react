@@ -9,13 +9,13 @@ import { AiFillStar } from "react-icons/ai";
 import { AiFillPlusCircle } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../redux/cart/cartAction";
-import { changeFavoriteStatus } from "../redux/products/productsAction";
 
 const checkInCart = (cart, product) => {
   return cart.find((item) => item.id === product.id);
 };
 
 export const Product = ({ productData }) => {
+  const[isFavorite,setIsFavorite] = useState(false)
   const { name, price, image, rate, favorite } = productData;
   const cartState = useSelector((state) => state.cartState);
   const dispatch = useDispatch();
@@ -30,11 +30,11 @@ export const Product = ({ productData }) => {
           alt={name}
         />
         <span
-          onClick={() => dispatch(changeFavoriteStatus(productData))}
+          onClick={()=>setIsFavorite(!isFavorite)}
           className="absolute bottom-0 right-3 cursor-pointer"
         >
           <BsFillHeartFill
-            className={`${favorite ? "text-red-700" : "text-red-200"}`}
+            className={`${isFavorite ? "text-red-700" : "text-red-200"}`}
           />
         </span>
       </div>

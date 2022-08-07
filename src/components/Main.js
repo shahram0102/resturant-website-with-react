@@ -20,15 +20,12 @@ import { SubMenu } from "../common/SubMenu";
 import ItemMenu from "./ItemMenu";
 import { Products } from "./Products";
 
-
 const Main = () => {
-
   return (
     <main className="mt-6 w-full h-full mb-24 flex flex-col px-4 sm:p-0">
       <HeroSection />
 
-
-        <SubMenu name={"Menu category"} icon={<FiChevronRight />} />
+      <SubMenu name={"Menu category"} icon={<FiChevronRight />} />
 
       <div className="mt-2 flex gap-3 no-scrollbar container m-auto  items-center overflow-x-auto overflow-y-hidden">
         <Link to="/products/pizza">

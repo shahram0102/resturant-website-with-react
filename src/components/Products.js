@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 // redux
 import { useSelector, useDispatch } from "react-redux/es/exports";
-import { fetchProducts } from "../redux/products/productsAction";
+import {  fetchProductsSuccess } from "../redux/products/productsAction";
 
 // components
 import { Loader } from "../common/Loader";
@@ -20,10 +20,10 @@ export const Products = () => {
   const dispatch = useDispatch();
   const { pathname } = useLocation();
   useEffect(() => {
-    dispatch(fetchProducts());
+    setTimeout(() => {
+      dispatch(fetchProductsSuccess());
+    }, 1000);
   }, []);
-
-
 
   return (
     <section className="mt-28 container relative  m-auto gap-x-3 gap-y-16 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
@@ -45,12 +45,7 @@ export const Products = () => {
       ) : (
         products &&
         products.map((product) => {
-          return (
-            <Product
-              key={product.id}
-              productData={product}
-            />
-          );
+          return <Product key={product.id} productData={product} />;
         })
       )}
     </section>

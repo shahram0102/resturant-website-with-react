@@ -7,7 +7,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 // redux
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProducts } from "../redux/products/productsAction";
+import { fetchProductsSuccess } from "../redux/products/productsAction";
 
 // components
 import { Product } from "./Product";
@@ -20,7 +20,9 @@ function FavoriteItems() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchProducts());
+    setTimeout(() => {
+      dispatch(fetchProductsSuccess())
+    }, 1000);
   }, []);
 
   return (

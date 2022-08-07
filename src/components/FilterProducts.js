@@ -8,7 +8,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
 // redux
 import { useSelector } from "react-redux";
-import { fetchProducts } from "../redux/products/productsAction";
+import {  fetchProductsSuccess } from "../redux/products/productsAction";
 import { useDispatch } from "react-redux";
 
 // components
@@ -25,7 +25,9 @@ const FilterProducts = () => {
   const filterProducts = products.filter((p) => p.category === category);
 
   useEffect(() => {
-    dispatch(fetchProducts());
+    setTimeout(() => {
+      dispatch(fetchProductsSuccess());
+    }, 1000);
   }, []);
 
   return (
