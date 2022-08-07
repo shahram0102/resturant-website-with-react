@@ -50,7 +50,7 @@ export const Product = ({ productData }) => {
           <span className="text-lg">{price}</span>
         </div>
         {checkInCart(cartState.selectedItems, productData) ? (
-          <Link to="/cart">Go to soppingCard</Link>
+          <Link to="/cart">Go Card</Link>
         ) : (
           <button
             onClick={() => dispatch(addToCart(productData))}
